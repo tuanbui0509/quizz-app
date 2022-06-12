@@ -5,10 +5,10 @@ import { Button, Card, Col, Container, ListGroup, ListGroupItem, Row } from 'rea
 export default function SectionSidler() {
   const listItem = () => {
     let result = [];
-    for (let index = 0; index < 8; index++) {
+    for (let index = 0; index < 20; index++) {
       result.push(
-        <Col lg="3" key={index} className='mb-3'>
-          <CardSection/>
+        <Col lg="3" key={index} className="mb-4">
+          <CardSection />
         </Col>
       );
     }
@@ -17,7 +17,7 @@ export default function SectionSidler() {
   return (
     <div className="section-slider container-fluid">
       <Container>
-        <Row>
+        <Row className="section-slider__top">
           <Col lg="6" sm="12">
             <div className="section-slider__heading">
               <h3 className="section-slider__primary">Những chủ đề nổi bật nhất</h3>

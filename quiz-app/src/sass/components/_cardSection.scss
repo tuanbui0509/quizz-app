@@ -4,6 +4,7 @@
     min-width: 0;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     word-wrap: break-word;
+    border-radius: 5px;
     &__thumb {
         position: relative;
         padding-top: 30%;
@@ -31,11 +32,23 @@
         }
         &__name {
             font-size: 14px;
-            color: #fff;
+            color: rgb(255, 255, 255);
             margin-left: 1rem;
         }
     }
-    &__body{
-        padding: 3rem 0;
+    &__body {
+        padding: 2rem 1rem;
+        &-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+    }
+    &__footer {
+        padding: 1rem;
+    }
+
+    &:hover {
+        transition: all 0.5s ease-in-out;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     }
 }
