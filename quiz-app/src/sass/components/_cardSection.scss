@@ -45,6 +45,10 @@
     }
     &__footer {
         padding: 1rem;
+        @include flex(center, space-between);
+        &-item {
+            @include flex(center, center);
+        }
     }
 
     &:hover {

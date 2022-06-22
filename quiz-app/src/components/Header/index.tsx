@@ -1,4 +1,4 @@
-import Menu from 'components/Navbar';
+import Menu from 'components/SideNavbar';
 import React from 'react';
 
 export default function Header() {

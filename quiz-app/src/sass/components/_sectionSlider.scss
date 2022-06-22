@@ -1,21 +1,17 @@
 .section-slider {
-    padding: 4rem;
     background-color: $main-color;
-    &__top{
+    &__top {
         margin-bottom: 2rem;
+        @include flex(center, space-between);
     }
     &__heading {
         font-size: 18px;
     }
-    &__primary{
+    &__primary {
         font-size: 30px;
     }
 }
 
 .section-slider__btn {
     text-align: right;
-    button {
-        padding: 0.5rem 1.5rem;
-        font-size: 1.2rem;
-    }
 }

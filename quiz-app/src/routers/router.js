@@ -1,7 +1,7 @@
+import Logout from 'components/Logout'
 import NotFound from 'components/NotFound'
 import Home from 'features/Home'
 import Login from 'features/Login'
-import React from 'react'
 // import Loading from '../components/LoadingHOC'
 // const Schedule = Loading(React.lazy(() => import("../pages/Schedule")))
 // const AddSchedule = Loading(React.lazy(() => import("../pages/Schedule/AddSchedule")))
@@ -30,10 +30,10 @@ const router = [
         path: 'login',
         main:  <Login />
     },
-    // {
-    //     path: '/schedule',
-    //     main: () => <Schedule />
-    // },
+    {
+        path: 'logout',
+        main:  <Logout />
+    },
     // {
     //     path: '/dashboard/add',
     //     main: ({ history }) => <AddTask history={history} />

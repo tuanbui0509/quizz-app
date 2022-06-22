@@ -1,11 +1,13 @@
+@import "~antd/dist/antd.css";
+
 @import "./variables";
 @import "./mixins";
 @import "./base";
 
 @import "./components/header";
-@import "./components/navbar";
+@import "./components/sideNavbar";
 @import "./components/footer";
-@import "./components/slider";
+@import "./components/sectionSlider";
 @import "./components/section";
 @import "./components/cardSection";
 @import "./components/login";

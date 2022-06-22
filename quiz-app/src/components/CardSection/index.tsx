@@ -21,18 +21,18 @@ export default function CardSection() {
       <div className="cardSection__body">
         <Link className='cardSection__body-title' to="/">Trắc nghiệm Sử THPT Quốc gia 2017 Đề 305</Link>
       </div>
-      <div className="cardSection__footer d-flex align-items-center justify-content-between">
-        <div className="cardSection_footer-item d-flex align-items-center justify-content-between">
+      <div className="cardSection__footer">
+        <div className="cardSection__footer-item">
           <AiFillClockCircle />
-          <span>Không tính giờ</span>
+          <span>Unlimited</span>
         </div>
-        <div className="cardSection_footer-item d-flex align-items-center justify-content-between">
+        <div className="cardSection__footer-item">
           <AiFillDatabase />
-          <span>10 Lượt thi</span>
+          <span>10 Questions</span>
         </div>
-        <div className="cardSection_footer-item d-flex align-items-center justify-content-between">
+        <div className="cardSection__footer-item">
           <AiFillBook />
-          <span>40 Câu hỏi</span>
+          <span>Hard</span>
         </div>
       </div>
     </div>

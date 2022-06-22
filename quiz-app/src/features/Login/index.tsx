@@ -1,60 +1,65 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+import { Button, Checkbox, Form, Input } from 'antd';
+import { useAppDispatch } from 'app/hooks';
+import { LOGIN_SUCCESS } from 'constants/Messages';
+import { notificationSuccess } from 'helper/Notification';
+import { useNavigate } from 'react-router-dom';
+import { login } from './loginSlice';
 export default function Login() {
+  const nav = useNavigate();
+  const dispatch = useAppDispatch();
+  const onFinish = (values: any) => {
+    localStorage.setItem('token', JSON.stringify(values));
+    notificationSuccess(LOGIN_SUCCESS, 1000);
+    setTimeout(() => {
+      dispatch(login());
+      nav(`/home`);
+    }, 2000);
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo);
+  };
   return (
-    <div className="container">
-      <div className="row m-5 no-gutters shadow-lg">
-        <div className="col-md-6 d-none d-md-block">
+    <div className="login-page">
+      <div className="login-box">
+        <div className="illustration-wrapper">
           <img
-            src="https://auth.tracnghiem.vn/auth/resources/c9oah/login/tracnghiemvn/img/tracnghiemvn/background-login.jpg"
-            className="img-fluid"
-            style={{ minHeight: '100%' }}
+            src="https://mixkit.imgix.net/art/preview/mixkit-left-handed-man-sitting-at-a-table-writing-in-a-notebook-27-original-large.png?q=80&auto=format%2Ccompress&h=700"
+            alt="Login"
           />
         </div>
-        <div className="col-md-6 bg-white p-5">
-          <h3 className="pb-3 text-center">Login Form</h3>
-          <div className="form-style">
-            <form>
-              <div className="form-group pb-3">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="form-control"
-                  id="exampleInputEmail1"
-                  aria-describedby="emailHelp"
-                />
-              </div>
-              <div className="form-group pb-3">
-                <input
-                  type="password"
-                  placeholder="Password"
-                  className="form-control"
-                  id="exampleInputPassword1"
-                />
-              </div>
-              <div className="d-flex align-items-center justify-content-between">
-                <div className="d-flex align-items-center">
-                  <input type="checkbox" />{' '}
-                  <span className="pl-2 font-weight-bold">Remember Me</span>
-                </div>
-                <div>
-                  <Link to="#">
-                    Forget Password?
-                  </Link>
-                </div>
-              </div>
-              <div className="pb-2">
-                <button type="submit" className="btn btn-primary w-100 font-weight-bold mt-2">
-                  Submit
-                </button>
-              </div>
-            </form>
-            <div className="pt-4 text-center">
-              Get Members Benefit. <Link to="#">Sign Up</Link>
-            </div>
-          </div>
-        </div>
+        <Form
+          name="login-form"
+          initialValues={{ remember: true }}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+        >
+          <p className="form-title">Welcome back</p>
+          <p>Login to the Dashboard</p>
+          <Form.Item
+            name="username"
+            rules={[{ required: true, message: 'Please input your username!' }]}
+          >
+            <Input placeholder="Username" />
+          </Form.Item>
+
+          <Form.Item
+            name="password"
+            rules={[{ required: true, message: 'Please input your password!' }]}
+          >
+            <Input.Password placeholder="Password" />
+          </Form.Item>
+
+          <Form.Item name="remember" valuePropName="checked">
+            <Checkbox>Remember me</Checkbox>
+          </Form.Item>
+
+          <Form.Item>
+            <Button type="primary" htmlType="submit" className="login-form-button">
+              LOGIN
+            </Button>
+          </Form.Item>
+        </Form>
       </div>
     </div>
   );
