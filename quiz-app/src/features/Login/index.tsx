@@ -2,20 +2,24 @@ import { Button, Checkbox, Form, Input } from 'antd';
 import { useAppDispatch } from 'app/hooks';
 import { LOGIN_SUCCESS } from 'constants/Messages';
 import { notificationSuccess } from 'helper/Notification';
+import useLoading from 'hooks/useLoading';
 import { useNavigate } from 'react-router-dom';
 import { login } from './loginSlice';
 export default function Login() {
   const nav = useNavigate();
   const dispatch = useAppDispatch();
+  // const [Loading, Hidden, Display] = useLoading();
+
   const onFinish = (values: any) => {
+    // Display();
     localStorage.setItem('token', JSON.stringify(values));
     notificationSuccess(LOGIN_SUCCESS, 1000);
     setTimeout(() => {
       dispatch(login());
       nav(`/home`);
     }, 2000);
+    // Hidden();
   };
-
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
   };

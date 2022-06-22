@@ -23,9 +23,6 @@ export const loginSlice = createSlice({
   initialState,
   reducers: {
     login: (state) => {
-      console.log('====================================');
-      console.log(state.value);
-      console.log('====================================');
       state.value = true;
     },
     logout: (state) => {

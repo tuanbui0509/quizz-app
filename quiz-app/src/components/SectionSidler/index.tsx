@@ -28,9 +28,9 @@ export default function SectionSidler() {
           </Col>
           <Col>
             <span>Sort by: </span>
-            <Select defaultValue="Option1">
-              <Option value="Option1">Option1</Option>
-              <Option value="Option2">Option2</Option>
+            <Select defaultValue="latest">
+              <Option value="latest">Latest</Option>
+              <Option value="top-rated">Top rated</Option>
             </Select>
           </Col>
         </Row>
