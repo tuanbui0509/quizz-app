@@ -1,38 +1,21 @@
-import Logout from 'components/Logout'
-import NotFound from 'components/NotFound'
-import Home from 'features/Home'
-import Login from 'features/Login'
-// import Loading from '../components/LoadingHOC'
-// const Schedule = Loading(React.lazy(() => import("../pages/Schedule")))
-// const AddSchedule = Loading(React.lazy(() => import("../pages/Schedule/AddSchedule")))
-// const EditSchedule = Loading(React.lazy(() => import("../pages/Schedule/EditSchedule")))
-// const EditTask = Loading(React.lazy(() => import("../pages/Dashboard/EditTask")))
-// const AddTask = Loading(React.lazy(() => import("../pages/Dashboard/AddTask")))
-// const NotFound = Loading(React.lazy(() => import("../pages/NotFound")))
-// const Login = Loading(React.lazy(() => import("../pages/Login")))
-// const User = Loading(React.lazy(() => import("../pages/User")))
-// const Dashboard = Loading(React.lazy(() => import("../pages/Dashboard")))
+import { UserPage } from 'features/UserPage'
+import React from 'react';
+const NotFound = React.lazy(() => import('components/NotFound'));
+const Logout = React.lazy(() => import('components/Logout'));
+const Login = React.lazy(() => import('features/Login'));
 
 const router = [
     {
-        path: 'home',
-        main: <Home />
-    },
-    {
         path: '/',
-        main: <Home />
+        main: <UserPage />
     },
-    // {
-    //     path: '/user',
-    //     main: () => <User />
-    // },
     {
         path: 'login',
-        main:  <Login />
+        main: <Login />
     },
     {
         path: 'logout',
-        main:  <Logout />
+        main: <Logout />
     },
     // {
     //     path: '/dashboard/add',

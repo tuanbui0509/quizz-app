@@ -1,5 +1,5 @@
-.section-slider {
-    background-color: $main-color;
+.list-exam {
+    // background-color: $main-color;
     &__top {
         margin-bottom: 2rem;
         @include flex(center, space-between);
@@ -12,6 +12,6 @@
     }
 }
 
-.section-slider__btn {
+.list-exam__btn {
     text-align: right;
 }

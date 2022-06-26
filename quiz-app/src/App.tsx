@@ -1,30 +1,16 @@
 import { useAppSelector } from 'app/hooks';
-import { Footer } from 'components/Footer';
-import SideNavbar from 'components/SideNavbar';
-import Login from 'features/Login';
+import { UserPage } from 'features/UserPage';
+import { ShowRoutes } from 'helper/Func/ShowRoutes';
 import { Fragment, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import { Counter } from './features/counter/Counter';
+import { BrowserRouter as Router } from 'react-router-dom';
+import router from 'routers/router';
 
 function App() {
   const isLogin = useAppSelector((state) => state.login.value);
-  console.log('====================================');
-  console.log(isLogin);
-  console.log('====================================');
   return (
     <Fragment>
-      {/* <Counter />  */}
       <Suspense fallback={<div>Loading ...</div>}>
-        {isLogin ? (
-          <Router>
-            <SideNavbar />
-            <Footer />
-          </Router>
-        ) : (
-          <Router>
-            <Login />
-          </Router>
-        )}
+        <Router>{!isLogin ? ShowRoutes(router) : <UserPage />}</Router>
       </Suspense>
     </Fragment>
   );

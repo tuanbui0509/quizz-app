@@ -1,9 +1,8 @@
-import SectionSidler from 'components/SectionSidler'
-import './style.scss'
+import ListExam from 'components/ListExam'
 export default function Home() {
   return (
     <>
-      <SectionSidler/>
+      <ListExam/>
     </>
   )
 }

@@ -1,12 +1,20 @@
-import { Col, Menu, MenuProps, Row, Select } from 'antd';
+import { Col, Menu, MenuProps, Pagination, Row, Select } from 'antd';
 import CardSection from 'components/CardSection';
 const { Option } = Select;
-export default function SectionSidler() {
+export default function ListExam() {
   const listItem = () => {
     let result = [];
     for (let index = 0; index < 20; index++) {
       result.push(
-        <Col key={index} xs={{ span: 23, offset: 1 }} lg={{ span: 7, offset: 1 }} className="mb-2">
+        <Col
+          key={index}
+          xs={{ span: 24 }}
+          md={{ span: 12 }}
+          lg={{ span: 8 }}
+          // xl={{ span: 7, offset: 1 }}
+          className="gutter-row mb-2"
+          span={8}
+        >
           <CardSection />
         </Col>
       );
@@ -18,11 +26,11 @@ export default function SectionSidler() {
   };
 
   return (
-    <div className="section-slider container-fluid">
+    <div className="list-exam container-fluid">
       <>
-        <Row className="section-slider__top">
+        <Row className="list-exam__top">
           <Col>
-            <div className="section-slider__heading">
+            <div className="list-exam__heading">
               <span>20 results</span>
             </div>
           </Col>
@@ -34,7 +42,8 @@ export default function SectionSidler() {
             </Select>
           </Col>
         </Row>
-        <Row>{listItem()}</Row>
+        <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>{listItem()}</Row>
+        <Pagination style={{ textAlign: 'center' }} defaultCurrent={1} total={50} />
       </>
     </div>
   );
