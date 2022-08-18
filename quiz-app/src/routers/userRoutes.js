@@ -3,6 +3,7 @@ import React from 'react';
 const NotFound = React.lazy(() => import('components/NotFound'));
 const Logout = React.lazy(() => import('components/Logout'));
 const Home = React.lazy(() => import('features/Home'));
+const QuestionManagement = React.lazy(() => import('features/QuestionManagement'));
 const userRoutes = [
     {
         path: '/',
@@ -14,7 +15,11 @@ const userRoutes = [
     },
     {
         path: 'logout',
-        main:  <Logout />
+        main: <Logout />
+    },
+    {
+        path: 'question-management',
+        main: <QuestionManagement />
     },
     {
         path: '*',

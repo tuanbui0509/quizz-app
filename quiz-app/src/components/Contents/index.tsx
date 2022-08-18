@@ -1,4 +1,4 @@
-import { Layout } from 'antd';
+import { BackTop, Layout } from 'antd';
 import { ShowRoutes } from 'helper/Func/ShowRoutes';
 import userRoutes from 'routers/userRoutes';
 const { Content } = Layout;
@@ -19,6 +19,7 @@ export const Contents = () => {
       >
         {ShowRoutes(userRoutes)}
       </div>
+      <BackTop />
     </Content>
   );
 };
