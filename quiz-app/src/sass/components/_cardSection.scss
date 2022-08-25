@@ -19,21 +19,22 @@
         }
     }
     &__teacher {
-        margin-top: -50px;
-        position: relative;
         z-index: 3;
         padding: 1rem;
+        text-align: right;
         &__link {
+            color: $main-color;
         }
         &__avatar {
-            width: 56px;
-            height: 56px;
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
         }
         &__name {
-            font-size: 14px;
-            color: rgb(255, 255, 255);
+            font-size: 16px;
+            color: $main-color;
             margin-left: 1rem;
+            font-weight: 500;
         }
     }
     &__body {
@@ -49,6 +50,10 @@
         &-item {
             @include flex(center, center);
         }
+    }
+    &__tag-icon{
+        font-size: 20px;
+        margin:0 10px;
     }
 
     &:hover {

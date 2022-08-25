@@ -1,5 +1,5 @@
 import { useAppSelector } from 'app/hooks';
-import { UserPage } from 'features/UserPage';
+import  UserPage  from 'features/UserPage';
 import { ShowRoutes } from 'helper/Func/ShowRoutes';
 import { Fragment, Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
