@@ -1,25 +1,27 @@
-import axios from "axios";
-import { API_URL } from "constants/configs";
+import axios from 'axios';
+import { API_URL } from 'constants/configs';
+
 const axiosClient = axios.create({
   baseURL: API_URL,
   headers: {
-    "content-type": "application/json",
+    'content-type': 'application/json',
   },
 });
 
-const errorHandler = error => {
+export const errorHandler = (error: any) => {
   return Promise.reject(error);
 };
 
-const responseHandler = async response => {
+export const responseHandler = async (response: any) => {
   if (response.status === 401) {
-    localStorage.removeItem('Token')
-    window.location = "/login";
+    localStorage.removeItem('Token');
+    const win: Window = window;
+    win.location = '/login';
   }
   return response;
 };
 
-const requestHandler = async request => {
+export const requestHandler = async (request: any) => {
   const Token = localStorage.getItem('token') ?? '';
   if (Token) {
     request.headers.Authorization = `Bearer ${Token}`;

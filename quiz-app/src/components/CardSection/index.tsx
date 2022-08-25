@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { AiFillClockCircle, AiFillDatabase, AiFillBook } from 'react-icons/ai';
+import { AiFillClockCircle, AiFillDatabase, AiFillBook, AiFillTags } from 'react-icons/ai';
+import { Tag } from 'antd';
 export default function CardSection() {
   return (
     <div className="cardSection">
@@ -8,6 +9,17 @@ export default function CardSection() {
         <img src="https://storage.tracnghiem.vn/public/trac-nghiem-online-tieng-anh.jpg" alt="" />
       </div>
       <span className="cardSection__advance"></span>
+
+      <div className="cardSection__body">
+        <Link className="cardSection__body-title" to="/">
+          Trắc nghiệm Sử THPT Quốc gia 2017 Đề 305
+        </Link>
+      </div>
+      <div>
+        <AiFillTags className='cardSection__tag-icon'></AiFillTags>
+        <Tag color="#2db7f5">#Geometry</Tag>
+        <Tag color="#87d068">#Maths</Tag>
+      </div>
       <div className="cardSection__teacher">
         <Link to="/" className="cardSection__teacher__link">
           <img
@@ -17,9 +29,6 @@ export default function CardSection() {
           />
           <span className="cardSection__teacher__name">Bùi Ngọc Tuấn</span>
         </Link>
-      </div>
-      <div className="cardSection__body">
-        <Link className='cardSection__body-title' to="/">Trắc nghiệm Sử THPT Quốc gia 2017 Đề 305</Link>
       </div>
       <div className="cardSection__footer">
         <div className="cardSection__footer-item">

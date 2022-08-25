@@ -2,11 +2,12 @@ import { Footer } from 'components/Footer';
 import Navbar from 'components/Navbar';
 import React from 'react';
 
-export const UserPage = () => {
+const UserPage = () => {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <Footer />
     </>
   );
 };
+export default UserPage;

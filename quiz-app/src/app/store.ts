@@ -1,18 +1,16 @@
 import { Action, combineReducers, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import counterReducer from '../features/counter/counterSlice';
 import loginReducer from '../features/Login/loginSlice';
 
 const reducers = combineReducers({
-  counter: counterReducer,
   login: loginReducer,
 });
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['counter', 'login'], //
+  whitelist: ['login'], //
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
